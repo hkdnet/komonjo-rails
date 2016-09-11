@@ -6,14 +6,22 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      channel: 'general'
+      selectedChannel: undefined,
+      channels: [
+        { id: '1', name: 'general' },
+        { id: '2', name: 'random' },
+        { id: '3', name: 'times_hkdnet' }
+      ]
     };
   }
   render() {
     return (
       <div>
         <Header title="komonjo"></Header>
-        <Body channel={ this.state.channel }></Body>
+        <Body
+          selectedChannel={ this.state.selectedChannel }
+          channels={ this.state.channels }
+        ></Body>
       </div>
     );
   }

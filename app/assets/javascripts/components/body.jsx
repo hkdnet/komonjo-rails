@@ -5,7 +5,10 @@ class Body extends React.Component {
   render() {
     return (
       <section>
-        <ChannelList channel={ this.props.channel }></ChannelList>
+        <ChannelList
+          selectedChannel={ this.props.selectedChannel }
+          channels={ this.props.channels }
+        ></ChannelList>
       </section>
     );
   }
