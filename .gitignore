@@ -1,0 +1,19 @@
+# bundler state
+/.bundle
+/vendor/bundle/
+/vendor/ruby/
+
+# minimal Rails specific artifacts
+db/*.sqlite3
+/log/*
+/tmp/*
+
+# various artifacts
+.redcar/
+.sass-cache
+/coverage.data
+/coverage/
+node_modules/
+
+# OSX
+.DS_Store
