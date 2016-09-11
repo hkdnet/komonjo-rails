@@ -12,5 +12,3 @@
 //
 //= require_tree .
 
-var hoge = require('hoge');
-console.log(hoge(1));
