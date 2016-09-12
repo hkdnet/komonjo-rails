@@ -1,5 +1,5 @@
 require('whatwg-fetch');
-const Channel = require('./channel.js');
+const Komonjo = require('./komonjo.js');
 
 class Client {
   get host() {
@@ -13,7 +13,7 @@ class Client {
     let url = this.baseURL + '/channels';
     return fetch(url)
       .then(res => res.json())
-      .then(data => data.map(e => new Channel(e)))
+      .then(data => data.map(e => new Komonjo.Channel(e)))
       .catch(ex => console.log('parsing failed', ex));
   }
 }

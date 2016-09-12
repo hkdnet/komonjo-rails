@@ -1,20 +1,20 @@
 const React = require('react');
 const Header = require('./header.jsx');
 const Body = require('./body.jsx');
-const Client = require('../client.js');
-const Channel = require('../channel.js');
-let client = new Client();
+const Komonjo = require('../komonjo.js');
+const store = Komonjo.store;
+const stateExtractor = (store) => {
+  return {
+    channels: store.channels,
+    selectedChannel: store.selectedChannel
+  };
+}
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      selectedChannel: undefined,
-      channels: [ ]
-    };
-    client.fetchChannels()
-      .then(data => data.map(e => new Channel(e)))
-      .then(channels => this.setState({ channels }));
+    this.state = stateExtractor(store);
+    store.on("CHANGE", () => this._onChange());
   }
   render() {
     return (
@@ -26,6 +26,9 @@ class App extends React.Component {
         ></Body>
       </div>
     );
+  }
+  _onChange() {
+    this.setState(stateExtractor(store));
   }
 }
 
