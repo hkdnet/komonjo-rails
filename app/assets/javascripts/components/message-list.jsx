@@ -1,11 +1,12 @@
 const React = require('react');
+const Message = require('./message.jsx');
 
 class MessageList extends React.Component {
   render() {
     let messages = this.props.messages.map(e => {
       return (
         <li key={ e.ts }>
-          { e.user.name }
+          <Message message={ e }></Message>
         </li>
       );
     });
