@@ -9,6 +9,9 @@ class Body extends React.Component {
           selectedChannel={ this.props.selectedChannel }
           channels={ this.props.channels }
         ></ChannelList>
+        <span>
+          { this.props.selectedChannel && this.props.selectedChannel.name }
+        </span>
       </section>
     );
   }

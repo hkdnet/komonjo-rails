@@ -16,6 +16,14 @@ class Client {
       .then(data => data.map(e => new Komonjo.Channel(e)))
       .catch(ex => console.log('parsing failed', ex));
   }
+
+  fetchMessages(channelName, options) {
+    let url = this.baseURL + '/channels/' + channelName + '/messages';
+    return fetch(url)
+      .then(res => res.json())
+      .then(data => data.map(e => new Komonjo.Message(e)))
+      .catch(ex => console.log('parsing failed', ex));
+  }
 }
 
 module.exports = Client;
