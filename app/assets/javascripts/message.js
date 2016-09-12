@@ -4,6 +4,7 @@ class Message {
   constructor(data) {
     this._data = data
   }
+  get data() { return this._data; }
   get type() { return this.data['type']; }
   get channel() { return this.data['channel']; }
   get text() { return this.data['text']; }

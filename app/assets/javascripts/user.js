@@ -4,6 +4,7 @@ class User {
   constructor(data) {
     this._data = data
   }
+  get data() { return this._data; }
   get id() { return this.data['id']; }
   get name() { return this.data['name']; }
   get deleted() { return this.data['deleted']; }

@@ -4,6 +4,7 @@ class Profile {
   constructor(data) {
     this._data = data
   }
+  get data() { return this._data; }
   get first_name() { return this.data['first_name']; }
   get last_name() { return this.data['last_name']; }
   get real_name() { return this.data['real_name']; }
