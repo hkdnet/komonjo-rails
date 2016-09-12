@@ -1,18 +1,20 @@
 const React = require('react');
 const Header = require('./header.jsx');
 const Body = require('./body.jsx');
+const Client = require('../client.js');
+const Channel = require('../channel.js');
+let client = new Client();
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       selectedChannel: undefined,
-      channels: [
-        { id: '1', name: 'general' },
-        { id: '2', name: 'random' },
-        { id: '3', name: 'times_hkdnet' }
-      ]
+      channels: [ ]
     };
+    client.fetchChannels()
+      .then(data => data.map(e => new Channel(e)))
+      .then(channels => this.setState({ channels }));
   }
   render() {
     return (
