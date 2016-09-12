@@ -1,7 +1,8 @@
 const React = require('react');
+const Komonjo = require('../komonjo.js');
 const Message = require('./message.jsx');
 
-class MessageList extends React.Component {
+class MessageList extends Komonjo.BaseComponent {
   render() {
     let messages = this.props.messages.map(e => {
       return (

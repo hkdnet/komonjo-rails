@@ -1,7 +1,7 @@
 const React = require('react');
 const Komonjo = require('../komonjo.js');
 
-class ChannelList extends React.Component {
+class ChannelList extends Komonjo.BaseComponent {
   render() {
     let options = this.props.channels.map(e => {
       return (

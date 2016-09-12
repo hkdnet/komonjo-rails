@@ -1,7 +1,7 @@
 const React = require('react');
+const Komonjo = require('../komonjo.js');
 const Header = require('./header.jsx');
 const Body = require('./body.jsx');
-const Komonjo = require('../komonjo.js');
 const store = Komonjo.store;
 const stateExtractor = (store) => {
   return {
@@ -11,7 +11,7 @@ const stateExtractor = (store) => {
   };
 }
 
-class App extends React.Component {
+class App extends Komonjo.BaseComponent {
   constructor(props) {
     super(props);
     this.state = stateExtractor(store);

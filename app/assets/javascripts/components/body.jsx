@@ -1,8 +1,9 @@
 const React = require('react');
+const Komonjo = require('../komonjo.js');
 const ChannelList = require('./channel-list.jsx');
 const MessageList = require('./message-list.jsx');
 
-class Body extends React.Component {
+class Body extends Komonjo.BaseComponent {
   render() {
     return (
       <section>

@@ -1,6 +1,7 @@
 const React = require('react');
+const Komonjo = require('../komonjo.js');
 
-class Header extends React.Component {
+class Header extends Komonjo.BaseComponent {
   render() {
     return (
       <header>

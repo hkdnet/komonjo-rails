@@ -9,6 +9,8 @@ class Komonjo {
   static get Message() { return this._Message || (this._Message = require('./message.js')); }
   static get User() { return this._User || (this._User = require('./user.js')); }
   static get Profile() { return this._Profile || (this._Profile = require('./profile.js')); }
+
+  static get BaseComponent() { return this._BaseComponent || (this._BaseComponent = require('./components/base-component.jsx')); }
 }
 
 module.exports = Komonjo;

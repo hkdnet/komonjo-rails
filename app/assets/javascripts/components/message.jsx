@@ -1,6 +1,7 @@
 const React = require('react');
+const Komonjo = require('../komonjo.js');
 
-class Message extends React.Component {
+class Message extends Komonjo.BaseComponent {
   render() {
     let message = this.props.message;
     return (
