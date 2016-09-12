@@ -6,7 +6,8 @@ const store = Komonjo.store;
 const stateExtractor = (store) => {
   return {
     channels: store.channels,
-    selectedChannel: store.selectedChannel
+    selectedChannel: store.selectedChannel,
+    messages: store.messages
   };
 }
 
@@ -23,6 +24,7 @@ class App extends React.Component {
         <Body
           selectedChannel={ this.state.selectedChannel }
           channels={ this.state.channels }
+          messages={ this.state.messages }
         ></Body>
       </div>
     );
