@@ -1,6 +1,1 @@
-@channels.map do |e|
-  {
-    id: e.id,
-    name: e.name
-  }
-end
+@channels
