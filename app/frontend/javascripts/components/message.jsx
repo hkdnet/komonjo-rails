@@ -1,7 +1,7 @@
 const React = require('react');
 const Komonjo = require('../komonjo.js');
 const MessageIcon = require('./message-icon.jsx');
-
+const MessageText = require('./message-text.jsx');
 
 class Message extends Komonjo.BaseComponent {
   render() {
@@ -15,16 +15,19 @@ class Message extends Komonjo.BaseComponent {
         ></MessageIcon>
         <div>
           {message.user.name}<br />
-          {messageText}
+          <MessageText
+            text={ message.text }
+          ></MessageText>
         </div>
       </div>
     );
   }
 
   convertMessageText(text) {
-    Komonjo.store.emojis.reduce((prev, e) => {
-      const reg = new RegExp(`:${e.name}:`, 'mg');
-      return prev.replace(reg, e.url);
+    return Komonjo.store.emojis.reduce((prev, e) => {
+      const key = ':' + e.name + ':';
+      const imgTag = `<img src="${e.url}" alt="${e.name}">`
+      return prev.replace(key, imgTag);
     }, text);
   }
 }
