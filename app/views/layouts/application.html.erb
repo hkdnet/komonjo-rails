@@ -4,8 +4,8 @@
     <title>komonjo</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag    webpack_asset_path('application.css'), media: 'all' %>
+    <%= javascript_include_tag webpack_asset_path('application.js') %>
   </head>
 
   <body>

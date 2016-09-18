@@ -13,6 +13,7 @@ db/*.sqlite3
 /coverage.data
 /coverage/
 node_modules/
+public/assets
 .env
 
 # OSX

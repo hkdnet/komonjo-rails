@@ -9,3 +9,9 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
+
+Rails.application.config.assets.webpack_manifest =
+  begin
+    path = Rails.root.join('public', 'assets', 'webpack-manifest.json')
+    JSON.parse(File.read(path)) if File.exist?(path)
+  end
