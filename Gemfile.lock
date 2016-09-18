@@ -71,7 +71,7 @@ GEM
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
-    komonjo (0.1.5)
+    komonjo (0.1.7)
       slack-api (~> 1.1.6)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
