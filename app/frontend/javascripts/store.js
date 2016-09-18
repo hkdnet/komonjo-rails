@@ -13,6 +13,8 @@ class Store extends Komonjo.Emitter {
 
     Komonjo.client.fetchChannels()
       .then(channels => this.onUpdateChannels(channels));
+    Komonjo.client.fetchEmojis()
+      .then(emojis => this.onUpdateEmojis(emojis));
   }
   get channels() {
     return this._channels;
@@ -22,6 +24,9 @@ class Store extends Komonjo.Emitter {
   }
   get messages() {
     return this._messages;
+  }
+  get emojis() {
+    return this._emojis;
   }
   onUpdateChannels(channels) {
     this._channels = channels;
@@ -37,6 +42,10 @@ class Store extends Komonjo.Emitter {
   }
   onUpdateMessages(messages) {
     this._messages = messages;
+    this.emit("CHANGE");
+  }
+  onUpdateEmojis(emojis) {
+    this._emojis = emojis;
     this.emit("CHANGE");
   }
 }

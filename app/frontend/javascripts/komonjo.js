@@ -1,3 +1,4 @@
+require('./emoji.js');
 class Komonjo {
   static get Emitter() { return this._Emitter || (this._Emitter = require('./emitter.js')); }
   static get emitter() { return this._emitter || (this._emitter = new this.Emitter()); }
@@ -7,6 +8,7 @@ class Komonjo {
   static get client() { return this._client || (this._client = new this.Client()); }
   static get Channel() { return this._Channel || (this._Channel = require('./channel.js')); }
   static get Message() { return this._Message || (this._Message = require('./message.js')); }
+  static get Emoji() { return this._Emoji || (this._Emoji = require('./emoji.js')); }
   static get User() { return this._User || (this._User = require('./user.js')); }
   static get Profile() { return this._Profile || (this._Profile = require('./profile.js')); }
 

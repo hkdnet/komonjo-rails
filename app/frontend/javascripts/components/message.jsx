@@ -6,6 +6,7 @@ const MessageIcon = require('./message-icon.jsx');
 class Message extends Komonjo.BaseComponent {
   render() {
     let message = this.props.message;
+    let messageText = this.convertMessageText(message.text);
     return (
       <div>
         <MessageIcon
@@ -14,10 +15,17 @@ class Message extends Komonjo.BaseComponent {
         ></MessageIcon>
         <div>
           {message.user.name}<br />
-          {message.text}
+          {messageText}
         </div>
       </div>
     );
+  }
+
+  convertMessageText(text) {
+    Komonjo.store.emojis.reduce((prev, e) => {
+      const reg = new RegExp(`:${e.name}:`, 'mg');
+      return prev.replace(reg, e.url);
+    }, text);
   }
 }
 
