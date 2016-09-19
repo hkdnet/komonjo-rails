@@ -14,7 +14,8 @@ module Api
 
     def filters
       [
-        Komonjo::MessageFilters::ReplyFilter
+        Komonjo::MessageFilters::ReplyFilter,
+        Komonjo::MessageFilters::UrlFilter
       ]
     end
   end
