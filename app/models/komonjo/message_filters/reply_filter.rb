@@ -8,10 +8,15 @@ module Komonjo
       end
 
       def process(message)
+        num = 0
         message.text = message.text.gsub(/<@(\w+?)>/) do |m|
           id = m[2...-1]
           user = data[:user].find { |e| e.id == id }
-          user ? "@#{user.name}" : m
+          next m unless user
+          key = "reply_#{num}"
+          num += 1
+          message.meta[key] = "@#{user.name}"
+          "${#{key}}"
         end
         message
       end

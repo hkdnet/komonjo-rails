@@ -5,7 +5,13 @@ module Komonjo
       end
 
       def process(message)
-        message.text = message.text.gsub(/<(http.+?)>/) { |m| m[1...-1] }
+        num = 0
+        message.text = message.text.gsub(/<(http.+?)>/) do |m|
+          url = m[1...-1]
+          key = "url_#{num}"
+          message.meta[key] = url
+          "${#{key}}"
+        end
         message
       end
 

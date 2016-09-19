@@ -31,7 +31,8 @@ describe Komonjo::MessageFilters::ReplyFilter do
       end
       let(:filter) { Komonjo::MessageFilters::ReplyFilter.new(data) }
       subject { filter.process(message) }
-      it { expect(subject.text).to eq '@yayoi A-fuxu...Sleepy...' }
+      it { expect(subject.text).to eq '${reply_0} A-fuxu...Sleepy...' }
+      it { expect(subject.meta['reply_0']).to eq '@yayoi' }
     end
   end
 end

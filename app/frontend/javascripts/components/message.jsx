@@ -16,7 +16,7 @@ class Message extends Komonjo.BaseComponent {
         <div>
           {message.user.name}<br />
           <MessageText
-            text={ message.text }
+            text={ this.text }
           ></MessageText>
         </div>
       </div>
@@ -29,6 +29,24 @@ class Message extends Komonjo.BaseComponent {
       const imgTag = `<img src="${e.url}" alt="${e.name}">`
       return prev.replace(key, imgTag);
     }, text);
+  }
+
+  get text() {
+    let message = this.props.message;
+    return Object.getOwnPropertyNames(message.meta).reduce((prev, e) => {
+      let key = "${" + e + "}";
+      let value = this.createContent(e, message.meta[e]);
+      return prev.replace(key, value);
+    }, message.text);
+  }
+
+  createContent(type, meta) {
+    if (type.indexOf('reply') >= 0) {
+      return meta;
+    }
+    if (type.indexOf('url') >= 0) {
+      return meta;
+    }
   }
 }
 

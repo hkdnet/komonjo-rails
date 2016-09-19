@@ -15,7 +15,8 @@ describe Komonjo::MessageFilters::UrlFilter do
       end
       let(:filter) { described_class.new(data) }
       subject { filter.process(message) }
-      it { expect(subject.text).to eq 'http://example.com nano' }
+      it { expect(subject.text).to eq '${url_0} nano' }
+      it { expect(subject.meta['url_0']).to eq 'http://example.com' }
     end
   end
 end
