@@ -17,6 +17,7 @@ gem "browserify-rails", "~>3.1.0"
 gem "komonjo"
 gem "jb"
 gem "dotenv-rails"
+gem "somemoji"
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'

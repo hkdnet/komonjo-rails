@@ -63,6 +63,7 @@ GEM
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.5.1)
     ffi (1.9.14)
+    gemoji (3.0.0.rc1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -71,6 +72,7 @@ GEM
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
+    json (2.0.2)
     komonjo (0.1.9)
       slack-api (~> 1.1.6)
     listen (3.0.8)
@@ -160,6 +162,10 @@ GEM
       faye-websocket (~> 0.9.2)
       multi_json (~> 1.0, >= 1.0.3)
     slop (3.6.0)
+    somemoji (0.4.2)
+      gemoji (= 3.0.0.rc1)
+      json
+      slop
     spring (2.0.0)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -206,6 +212,7 @@ DEPENDENCIES
   rspec-rails
   rspec-request_describer
   sass-rails (~> 5.0)
+  somemoji
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
