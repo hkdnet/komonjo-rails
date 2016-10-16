@@ -22,7 +22,7 @@ class PartialMessage {
       case 'reply':
         return <span key={ key }>{ this.markdown }</span>;
       case 'emoji':
-        let pattern = /\[(.*?)\]\(.*?\)/;
+        let pattern = /!\[(.*?)\]\((.*?)\)/;
         let match = this.markdown.match(pattern);
         if (!match) {
           return <span key={ this.emojiKey(this.text) }>{ this.text }</span>;
