@@ -8,6 +8,7 @@ class Komonjo {
   static get client() { return this._client || (this._client = new this.Client()); }
   static get Channel() { return this._Channel || (this._Channel = require('./channel.js')); }
   static get Message() { return this._Message || (this._Message = require('./message.js')); }
+  static get PartialMessage() { return this._PartialMessage || (this._PartialMessage = require('./partial-message.js')); }
   static get Emoji() { return this._Emoji || (this._Emoji = require('./emoji.js')); }
   static get User() { return this._User || (this._User = require('./user.js')); }
   static get Profile() { return this._Profile || (this._Profile = require('./profile.js')); }

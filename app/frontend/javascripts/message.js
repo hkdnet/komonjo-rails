@@ -1,4 +1,5 @@
 const Komonjo = require('./komonjo.js');
+const marked = require('marked');
 
 class Message {
   constructor(data) {
@@ -13,6 +14,13 @@ class Message {
   get subtype() { return this.data['subtype']; }
   get meta() { return this.data['meta'] || {}; }
   get user() { return this._user || (this._user = new Komonjo.User(this.data['user'])); }
+  get markdown() { return this.data['markdown']; }
+  get partials() {
+    if (this._partials) return this._partials;
+    this._partials = this.data['partials'].map(e => new Komonjo.PartialMessage(e));
+    return this._partials;
+  }
+  get html() { return this._html || (this._html = marked(this.markdown)); }
 }
 
 module.exports = Message;

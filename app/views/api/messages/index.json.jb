@@ -1,1 +1,19 @@
-@messages
+@messages.map do |m|
+  {
+    type: m.type,
+    channel: m.channel,
+    text: m.text,
+    ts: m.ts,
+    edited: m.edited,
+    subtype: m.subtype,
+    user: m.user,
+    markdown: m.to_markdown,
+    partials: m.partial_messages.map do |e|
+      {
+        type: e.type,
+        text: e.text,
+        markdown: e.markdown,
+      }
+    end,
+  }
+end

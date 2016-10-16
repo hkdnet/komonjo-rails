@@ -6,7 +6,6 @@ const MessageText = require('./message-text.jsx');
 class Message extends Komonjo.BaseComponent {
   render() {
     let message = this.props.message;
-    let messageText = this.convertMessageText(message.text);
     return (
       <div>
         <MessageIcon
@@ -15,9 +14,7 @@ class Message extends Komonjo.BaseComponent {
         ></MessageIcon>
         <div>
           {message.user.name}<br />
-          <MessageText
-            text={ this.text }
-          ></MessageText>
+          { message.partials.map(e => e.asComponent()) }
         </div>
       </div>
     );
