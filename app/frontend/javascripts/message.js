@@ -17,7 +17,9 @@ class Message {
   get markdown() { return this.data['markdown']; }
   get partials() {
     if (this._partials) return this._partials;
-    this._partials = this.data['partials'].map(e => new Komonjo.PartialMessage(e));
+    this._partials = this.data['partials'].map((e, i) => {
+      return new Komonjo.PartialMessage(e, { ts: this.ts, idx: i });
+    });
     return this._partials;
   }
   get html() { return this._html || (this._html = marked(this.markdown)); }
