@@ -1,24 +1,18 @@
-# README
+# Komonjo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+WEB app to stock slack messages
 
-Things you may want to cover:
+## Usage
 
-* Ruby version
+...
 
-* System dependencies
+## Setup
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+$ bundle
+$ npm i
+$ vim .env
+KOMONJO_SLACK_API_TOKEN=xoxp-XXXXXXXXXXXX
+$ npm run dev
+$ bin/rails s
+```
