@@ -2,6 +2,7 @@ const React = require('react');
 const Komonjo = require('../komonjo.js');
 const ChannelList = require('./channel-list.jsx');
 const MessageList = require('./message-list.jsx');
+const GenerateButton = require('./generate-button.jsx');
 
 class Body extends Komonjo.BaseComponent {
   render() {
@@ -18,6 +19,7 @@ class Body extends Komonjo.BaseComponent {
           messages={ this.props.messages }
         >
         </MessageList>
+        <GenerateButton></GenerateButton>
       </section>
     );
   }
