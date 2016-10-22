@@ -10,7 +10,7 @@
     "dev": "webpack-dev-server --hot --inline --port 3500 --progress --profile --colors",
     "build": "NODE_ENV=production webpack -p --progress --profile --colors"
   },
-  "author": "",
+  "author": "hkdnet",
   "license": "MIT",
   "dependencies": {
     "babel-core": "^6.7.2",
