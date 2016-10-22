@@ -1,6 +1,7 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 const Komonjo = require('../komonjo.js');
+const inflect = require('i')();
 
 class BaseComponent extends React.Component {
   constructor(props) {
@@ -15,14 +16,19 @@ class BaseComponent extends React.Component {
 
   componentDidMount() {
     let t = ReactDOM.findDOMNode(this)
-    t.classList.add(this.constructor.name);
+    t.classList.add(this.componentClassName);
   }
 
   get store() {
     return Komonjo.store;
   }
 
-  _onChange() {
+  get componentClassName() {
+    if (this._componentClassName) {
+      return this._componentClassName;
+    }
+    let u = inflect.underscore(this.constructor.name);
+    return this._componentClassName = inflect.dasherize(u);
   }
 }
 
