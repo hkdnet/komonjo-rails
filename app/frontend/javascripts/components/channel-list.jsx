@@ -2,7 +2,7 @@ const React = require('react');
 const Komonjo = require('../komonjo.js');
 
 class ChannelList extends Komonjo.BaseComponent {
-  _render() {
+  render() {
     let options = this.props.channels.map(e => {
       return (
         <option key={e.id} value={ e.id }>{ e.name }</option>

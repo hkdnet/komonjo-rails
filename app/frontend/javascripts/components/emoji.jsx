@@ -2,7 +2,7 @@ const React = require('react');
 const Komonjo = require('../komonjo.js');
 
 class Emoji extends Komonjo.BaseComponent {
-  _render() {
+  render() {
     return (
       <img
         src={ this.props.url }

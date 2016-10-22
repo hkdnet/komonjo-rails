@@ -3,7 +3,7 @@ const Komonjo = require('../komonjo.js');
 const Message = require('./message.jsx');
 
 class MessageList extends Komonjo.BaseComponent {
-  _render() {
+  render() {
     let messages = this.props.messages.map(e => {
       return (
         <li key={ e.ts }>

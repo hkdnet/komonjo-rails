@@ -1,4 +1,5 @@
 const React = require('react');
+const ReactDOM = require('react-dom');
 const Komonjo = require('../komonjo.js');
 
 class BaseComponent extends React.Component {
@@ -12,17 +13,9 @@ class BaseComponent extends React.Component {
     }
   }
 
-  render() {
-    this.preRender();
-    let elm = this._render();
-    return this.postRender(elm);
-  }
-
-  preRender() {
-  }
-
-  postRender(elm) {
-    return elm;
+  componentDidMount() {
+    let t = ReactDOM.findDOMNode(this)
+    t.classList.add(this.constructor.name);
   }
 
   get store() {

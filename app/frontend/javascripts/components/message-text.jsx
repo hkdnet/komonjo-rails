@@ -3,7 +3,7 @@ const Komonjo = require('../komonjo.js');
 const Message = require('./message.jsx');
 
 class MessageText extends Komonjo.BaseComponent {
-  _render() {
+  render() {
     return (
       <div>
         { this.props.text }

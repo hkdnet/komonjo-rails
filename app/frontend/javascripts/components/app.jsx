@@ -4,7 +4,7 @@ const Header = require('./header.jsx');
 const Body = require('./body.jsx');
 
 class App extends Komonjo.BaseComponent {
-  _render() {
+  render() {
     return (
       <div>
         <Header title="komonjo"></Header>

@@ -3,7 +3,7 @@ const Komonjo = require('../komonjo.js');
 const Message = require('./message.jsx');
 
 class MessageIcon extends Komonjo.BaseComponent {
-  _render() {
+  render() {
     return (
       <div>
         <img src={ this.props.src } alt={ this.props.alt } />
