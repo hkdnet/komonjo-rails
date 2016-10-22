@@ -4,7 +4,9 @@ const marked = require('marked');
 class Message {
   constructor(data) {
     this._data = data
+    this.selected = false;
   }
+
   get data() { return this._data || {}; }
   get type() { return this.data['type']; }
   get channel() { return this.data['channel']; }

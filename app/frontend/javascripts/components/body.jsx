@@ -16,6 +16,7 @@ class Body extends Komonjo.BaseComponent {
           { this.props.selectedChannel && this.props.selectedChannel.name }
         </span>
         <MessageList
+          selectedChannel={ this.props.selectedChannel }
           messages={ this.props.messages }
         >
         </MessageList>

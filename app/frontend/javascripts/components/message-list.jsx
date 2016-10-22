@@ -4,10 +4,13 @@ const Message = require('./message.jsx');
 
 class MessageList extends Komonjo.BaseComponent {
   render() {
-    let messages = this.props.messages.map(e => {
+    let messages = this.props.messages.map((e, i) => {
       return (
         <li key={ e.ts }>
-          <Message message={ e }></Message>
+          <Message
+            idx={ i } selected={ e.selected }
+            message={ e } selectedChannel={ this.props.selectedChannel }
+          ></Message>
         </li>
       );
     });

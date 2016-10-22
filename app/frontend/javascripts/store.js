@@ -48,6 +48,11 @@ class Store extends Komonjo.Emitter {
     this._emojis = emojis;
     this.emit("CHANGE");
   }
+  toggleSelected(channel, idx) {
+    let message = this.messages[idx];
+    message.selected = !message.selected;
+    this.emit("CHANGE");
+  }
 }
 
 module.exports = Store;
