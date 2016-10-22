@@ -2,7 +2,7 @@ const React = require('react');
 const Komonjo = require('../komonjo.js');
 
 class GenerateButton extends Komonjo.BaseComponent {
-  render() {
+  _render() {
     return (
       <button
         onClick={ this.onClickHandler.bind(this) }

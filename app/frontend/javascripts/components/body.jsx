@@ -5,7 +5,7 @@ const MessageList = require('./message-list.jsx');
 const GenerateButton = require('./generate-button.jsx');
 
 class Body extends Komonjo.BaseComponent {
-  render() {
+  _render() {
     return (
       <section>
         <ChannelList

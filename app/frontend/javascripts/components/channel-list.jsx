@@ -2,7 +2,7 @@ const React = require('react');
 const Komonjo = require('../komonjo.js');
 
 class ChannelList extends Komonjo.BaseComponent {
-  render() {
+  _render() {
     let options = this.props.channels.map(e => {
       return (
         <option key={e.id} value={ e.id }>{ e.name }</option>
@@ -27,7 +27,7 @@ class ChannelList extends Komonjo.BaseComponent {
       console.log('どういうこったい');
       return false;
     }
-    Komonjo.store.onUpdateSelectedChannel(channels[0]);
+    this.store.onUpdateSelectedChannel(channels[0]);
   }
 }
 

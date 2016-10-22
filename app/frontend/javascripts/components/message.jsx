@@ -4,7 +4,7 @@ const MessageIcon = require('./message-icon.jsx');
 const MessageText = require('./message-text.jsx');
 
 class Message extends Komonjo.BaseComponent {
-  render() {
+  _render() {
     let message = this.props.message;
     return (
       <div>
