@@ -20,6 +20,11 @@ class Store extends Komonjo.Emitter {
     Komonjo.client.fetchEmojis()
       .then(emojis => this.onUpdateEmojis(emojis));
   }
+
+  get selectedMessages() {
+    return this.messages.filter(e => e.selected);
+  }
+
   onUpdateSelectedChannel(channel) {
     if (this._selectedChannel != channel) {
       Komonjo.client.fetchMessages(channel.name)
