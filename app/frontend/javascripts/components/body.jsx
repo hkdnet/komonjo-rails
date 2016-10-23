@@ -18,8 +18,7 @@ class Body extends Komonjo.BaseComponent {
         <MessageList
           selectedChannel={ this.props.selectedChannel }
           messages={ this.props.messages }
-        >
-        </MessageList>
+        ></MessageList>
         <GenerateButton></GenerateButton>
       </section>
     );

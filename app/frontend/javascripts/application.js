@@ -6,7 +6,7 @@ require('font-awesome-sass-loader');
 /**
  * Import stylesheet
  */
-require('../stylesheets/application');
+require('../stylesheets/application.css.scss');
 
 /**
  * Application script
