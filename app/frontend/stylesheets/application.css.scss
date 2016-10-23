@@ -6,6 +6,23 @@ html, body {
   height: 100vh;
   width: 100vw;
 }
+.header {
+  width: 100%;
+  h1 {
+    display: inline;
+  }
+  .generate-button {
+    /* tekitou */
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    margin: 10px 5px;
+    /* tekitou */
+  }
+}
+.body {
+  height: 70%;
+}
 .modal-wall {
   background: rgba(0, 0, 0, 0.4);
   height: 100%;
