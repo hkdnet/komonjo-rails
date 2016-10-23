@@ -13,7 +13,10 @@ html, body {
   position: absolute;
   .text-copy-dialog {
     margin: 0 auto;
-    top: 200px; // tekitou
+    /* tekitou */
+    top: 200px;
     position: relative;
+    background: #FFF;
+    /* tekitou */
   }
 }

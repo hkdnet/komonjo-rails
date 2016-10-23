@@ -4,11 +4,20 @@ const Komonjo = require('../komonjo.js');
 class TextCopyDialog extends Komonjo.BaseComponent {
   render() {
     return (
-      <div>
+      <div onClick={ this.cancelClick }>
         <textarea readOnly="true">{ this.props.text }</textarea>
-        <button>copy</button>
+        <button onClick={ this.onCopyButtonClickHandler.bind(this) }>copy</button>
       </div>
     );
+  }
+
+  cancelClick(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+
+  onCopyButtonClickHandler(e) {
+    console.log('copy');
   }
 }
 
