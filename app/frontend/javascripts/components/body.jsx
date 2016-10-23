@@ -3,11 +3,12 @@ const Komonjo = require('../komonjo.js');
 const ChannelList = require('./channel-list.jsx');
 const MessageList = require('./message-list.jsx');
 const GenerateButton = require('./generate-button.jsx');
+const ScrollableContainer = require('./scrollable-container.jsx');
 
 class Body extends Komonjo.BaseComponent {
   render() {
     return (
-      <section>
+      <ScrollableContainer>
         <ChannelList
           selectedChannel={ this.props.selectedChannel }
           channels={ this.props.channels }
@@ -19,8 +20,7 @@ class Body extends Komonjo.BaseComponent {
           selectedChannel={ this.props.selectedChannel }
           messages={ this.props.messages }
         ></MessageList>
-        <GenerateButton></GenerateButton>
-      </section>
+      </ScrollableContainer>
     );
   }
 }
