@@ -7,7 +7,7 @@ const TextCopyDialog = require('./text-copy-dialog.jsx');
 
 class App extends Komonjo.BaseComponent {
   render() {
-    if (false) {
+    if (!this.state.showModal) {
       return this._render();
     } else {
       return (
@@ -38,7 +38,8 @@ class App extends Komonjo.BaseComponent {
     return {
       channels: store.channels,
       selectedChannel: store.selectedChannel,
-      messages: store.messages
+      messages: store.messages,
+      showModal: store.showModal,
     };
   }
 }

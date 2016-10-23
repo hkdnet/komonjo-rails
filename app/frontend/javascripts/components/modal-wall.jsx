@@ -11,7 +11,7 @@ class ModalWall extends Komonjo.BaseComponent {
   }
 
   onClickHandler(e) {
-    console.log('modal clicked');
+    this.store.onUpdateShowModal(false);
     e.preventDefault();
     e.stopPropagation();
   }

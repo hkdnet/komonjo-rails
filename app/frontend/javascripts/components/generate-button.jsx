@@ -11,7 +11,7 @@ class GenerateButton extends Komonjo.BaseComponent {
   }
 
   onClickHandler(e) {
-    console.log('generate button is clicked');
+    this.store.onUpdateShowModal(true);
     e.stopPropagation();
     e.preventDefault();
   }

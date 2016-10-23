@@ -1,6 +1,6 @@
 const Komonjo = require('./komonjo.js');
 const inflect = require('i')();
-const keys = 'channels selectedChannel messages emojis'.split(/\s/);
+const keys = 'channels selectedChannel messages emojis showModal'.split(/\s/);
 
 class Store extends Komonjo.Emitter {
   constructor(dispatcher) { // dispatcherを受け取る
@@ -13,6 +13,7 @@ class Store extends Komonjo.Emitter {
     this._channels = [];
     this._selectedChannel = undefined;
     this._messages = [];
+    this._showModal = false;
 
     Komonjo.client.fetchChannels()
       .then(channels => this.onUpdateChannels(channels));
