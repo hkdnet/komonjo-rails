@@ -19,6 +19,11 @@ class BaseComponent extends React.Component {
     t.classList.add(this.componentClassName);
   }
 
+  componentDidUpdate() {
+    let t = ReactDOM.findDOMNode(this)
+    t.classList.add(this.componentClassName);
+  }
+
   get store() {
     return Komonjo.store;
   }

@@ -7,23 +7,13 @@ const TextCopyDialog = require('./text-copy-dialog.jsx');
 
 class App extends Komonjo.BaseComponent {
   render() {
-    if (!this.state.showModal) {
-      return this._render();
-    } else {
-      return (
-        <div>
-          <ModalWall>
-            <TextCopyDialog></TextCopyDialog>
-          </ModalWall>
-          { this._render() }
-        </div>
-      );
-    }
-  }
-
-  _render() {
     return (
       <div>
+        <ModalWall
+          visible={ this.state.showModal }>
+          <TextCopyDialog
+            text={ this.generateText() } ></TextCopyDialog>
+        </ModalWall>
         <Header title="komonjo"></Header>
         <Body
           selectedChannel={ this.state.selectedChannel }

@@ -4,7 +4,9 @@ const Komonjo = require('../komonjo.js');
 class ModalWall extends Komonjo.BaseComponent {
   render() {
     return (
-      <div onClick={ this.onClickHandler.bind(this) }>
+      <div
+        className={ this.props.visible ? "visible" : "invisible" }
+        onClick={ this.onClickHandler.bind(this) }>
         { this.props.children }
       </div>
     );

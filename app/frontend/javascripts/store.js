@@ -21,6 +21,10 @@ class Store extends Komonjo.Emitter {
       .then(emojis => this.onUpdateEmojis(emojis));
   }
 
+  get isGeneratable() {
+    return this.messages.some(e => e.selected);
+  }
+
   get selectedMessages() {
     return this.messages.filter(e => e.selected);
   }

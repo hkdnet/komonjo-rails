@@ -3,13 +3,19 @@ const Komonjo = require('../komonjo.js');
 const GenerateButton = require('./generate-button.jsx');
 
 class Header extends Komonjo.BaseComponent {
+  extractState(store) {
+    return {
+      disabled: !store.isGeneratable
+    };
+  }
   render() {
     return (
       <header>
         <h1>
           { this.props.title }
         </h1>
-        <GenerateButton></GenerateButton>
+        <GenerateButton
+          disabled={ this.state.disabled }></GenerateButton>
       </header>
     );
   }

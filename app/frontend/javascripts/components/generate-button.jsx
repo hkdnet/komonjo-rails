@@ -6,6 +6,7 @@ class GenerateButton extends Komonjo.BaseComponent {
     return (
       <button
         onClick={ this.onClickHandler.bind(this) }
+        disabled={ this.props.disabled && "disabled" }
       >generate</button>
     );
   }

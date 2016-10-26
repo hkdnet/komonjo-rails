@@ -24,6 +24,9 @@ html, body {
   height: 70%;
 }
 .modal-wall {
+  &.invisible {
+    display: none;
+  }
   background: rgba(0, 0, 0, 0.4);
   height: 100%;
   width: 100%;
