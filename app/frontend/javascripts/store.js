@@ -22,11 +22,15 @@ class Store extends Komonjo.Emitter {
   }
 
   get isGeneratable() {
-    return this.messages.some(e => e.selected);
+    return this.selectedMessages.length != 0;
   }
 
   get selectedMessages() {
     return this.messages.filter(e => e.selected);
+  }
+
+  get selectedMessageMarkdown() {
+    return this.selectedMessages.map(e => e.text);
   }
 
   onUpdateSelectedChannel(channel) {

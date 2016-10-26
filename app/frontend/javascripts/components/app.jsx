@@ -30,7 +30,12 @@ class App extends Komonjo.BaseComponent {
       selectedChannel: store.selectedChannel,
       messages: store.messages,
       showModal: store.showModal,
+      selectedMessages: store.selectedMessages,
     };
+  }
+
+  generateText() {
+    return this.state.selectedMessages.map(e => e.text);
   }
 }
 
