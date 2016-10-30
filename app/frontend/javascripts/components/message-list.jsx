@@ -5,11 +5,6 @@ const Message = require('./message.jsx');
 const ScrollableContainer = require('./scrollable-container.jsx');
 
 class MessageList extends Komonjo.BaseComponent {
-  shouldComponentUpdate(nextProps, nextState) {
-    return this.props.selectedChannel != nextProps.selectedChannel ||
-      this.props.messages.length != nextProps.messages.length;
-  }
-
   render() {
     let messages = this.generateMessages();
     return (
