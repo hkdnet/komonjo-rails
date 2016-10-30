@@ -5,9 +5,7 @@ class TextCopyDialog extends Komonjo.BaseComponent {
   render() {
     return (
       <div onClick={ this.cancelClick }>
-        <textarea
-          defaultValue={ this.props.text }
-          readOnly="true"></textarea>
+        <div>{ this.props.text }</div>
         <button onClick={ this.onCopyButtonClickHandler.bind(this) }>copy</button>
       </div>
     );
