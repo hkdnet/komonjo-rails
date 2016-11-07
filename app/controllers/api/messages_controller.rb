@@ -7,6 +7,10 @@ module Api
           e.type == :emoji && e.markdown.start_with?(':')
         end
         not_replaced.each do |e|
+          if e.markdown =~ /:skin-tone-\d:/
+            e.instance_variable_set('@text', '')
+            next
+          end
           code = e.markdown[1..-2]
           n = Somemoji.twemoji_emoji_collection.replace_code(e.markdown) { |a| emojify(a) }
           e.instance_variable_set('@markdown', n)
