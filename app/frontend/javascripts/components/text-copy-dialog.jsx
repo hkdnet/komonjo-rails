@@ -1,12 +1,15 @@
 const React = require('react');
 const Komonjo = require('../komonjo.js');
+const ClipboardButton = require('react-clipboard.js');
 
 class TextCopyDialog extends Komonjo.BaseComponent {
   render() {
     return (
       <div onClick={ this.cancelClick }>
         <div>{ this.props.text }</div>
-        <button onClick={ this.onCopyButtonClickHandler.bind(this) }>copy</button>
+        <ClipboardButton data-clipboard-text={ this.props.text }>
+          copy to clipboard
+        </ClipboardButton>
       </div>
     );
   }
