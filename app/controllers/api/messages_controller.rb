@@ -2,8 +2,6 @@ module Api
   class MessagesController < ApiController
     def index
       @messages = fetch_messages
-      require 'pry'
-
       @messages.each do |m|
         not_replaced = m.partial_messages.select do |e|
           e.type == :emoji && e.markdown.start_with?(':')
