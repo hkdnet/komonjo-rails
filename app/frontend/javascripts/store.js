@@ -26,7 +26,7 @@ class Store extends Komonjo.Emitter {
   }
 
   get selectedMessages() {
-    return this.messages.filter(e => e.selected);
+    return this.messages.filter(e => e.selected).sort(e => e.ts);
   }
 
   onUpdateSelectedChannel(channel) {
