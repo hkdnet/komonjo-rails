@@ -29,10 +29,6 @@ class Store extends Komonjo.Emitter {
     return this.messages.filter(e => e.selected);
   }
 
-  get selectedMessageMarkdown() {
-    return this.selectedMessages.map(e => e.text);
-  }
-
   onUpdateSelectedChannel(channel) {
     if (this._selectedChannel != channel) {
       Komonjo.client.fetchMessages(channel.name)

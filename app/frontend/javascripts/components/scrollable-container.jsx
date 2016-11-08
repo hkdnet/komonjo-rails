@@ -4,7 +4,6 @@ const ReactDOM = require('react-dom');
 
 class ScrollableContainer extends Komonjo.BaseComponent {
   componentDidUpdate () {
-    console.log('did update scrollable-container')
     switch (this.props.defaultPosition) {
       case 'bottom':
         this.scrollToBottom();
