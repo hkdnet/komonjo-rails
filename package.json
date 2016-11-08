@@ -23,6 +23,7 @@
     "file-loader": "^0.8.5",
     "font-awesome": "^4.6.3",
     "font-awesome-sass-loader": "^1.0.1",
+    "i": "^0.3.5",
     "imports-loader": "^0.6.5",
     "marked": "^0.3.6",
     "node-sass": "^3.7.0",
