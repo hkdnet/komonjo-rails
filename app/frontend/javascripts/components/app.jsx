@@ -7,8 +7,11 @@ const TextCopyDialog = require('./text-copy-dialog.jsx');
 
 class App extends Komonjo.BaseComponent {
   render() {
+    // Appクラス内のトップレベル要素にはappというクラスが自動でつく
+    // 他につけたければclassNameプロパティでつければよい。
+    // classプロパティではないので注意
     return (
-      <div>
+      <div className="hoge fuga">
         <ModalWall
           visible={ this.state.showModal }>
           <TextCopyDialog
