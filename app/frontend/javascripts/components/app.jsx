@@ -35,7 +35,7 @@ class App extends Komonjo.BaseComponent {
   }
 
   generateText() {
-    return this.state.selectedMessages.map(e => e.text);
+    return this.state.selectedMessages.map(e => e.markdown).join("\n");
   }
 }
 
