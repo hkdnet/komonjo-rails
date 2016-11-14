@@ -17,11 +17,13 @@ html, body {
     right: 0;
     display: inline-block;
     margin: 10px 5px;
+    height: 30px;
     /* tekitou */
   }
 }
 .body {
   height: 70%;
+  height: calc(100vh - 30px);
 }
 .modal-wall {
   &.invisible {
@@ -43,4 +45,5 @@ html, body {
 
 .scrollable-container {
   overflow-y: scroll;
+  height: 100%;
 }
