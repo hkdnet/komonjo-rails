@@ -31,14 +31,14 @@ body {
 }
 
 .modal-wall {
-  &.invisible {
-    display: none;
-  }
-
   background: rgba(0, 0, 0, 0.4);
   height: 100%;
   width: 100%;
   position: absolute;
+
+  &.invisible {
+    display: none;
+  }
 
   .text-copy-dialog {
     margin: 0 auto;

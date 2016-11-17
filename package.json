@@ -10,7 +10,9 @@
     "dev": "webpack-dev-server --hot --inline --port 3500 --progress --profile --colors",
     "build": "NODE_ENV=production webpack -p --progress --profile --colors",
     "test": "npm-run-all test:*",
-    "test:style": "stylelint app/frontend/stylesheets/**/*"
+    "test:style": "stylelint app/frontend/stylesheets/**/*",
+    "fmt": "npm-run-all fmt:*",
+    "fmt:style": "find app/frontend/stylesheets -type f | xargs stylefmt"
   },
   "author": "hkdnet",
   "license": "MIT",
