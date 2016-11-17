@@ -1,45 +1,50 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
+
 .app {
   height: 100vh;
   width: 100vw;
 }
+
 .header {
   width: 100%;
+
   h1 {
     display: inline;
   }
+
   .generate-button {
-    /* tekitou */
     position: absolute;
     right: 0;
     display: inline-block;
     margin: 10px 5px;
     height: 30px;
-    /* tekitou */
   }
 }
+
 .body {
   height: 70%;
   height: calc(100vh - 30px);
 }
+
 .modal-wall {
   &.invisible {
     display: none;
   }
+
   background: rgba(0, 0, 0, 0.4);
   height: 100%;
   width: 100%;
   position: absolute;
+
   .text-copy-dialog {
     margin: 0 auto;
-    /* tekitou */
     top: 200px;
     position: relative;
-    background: #FFF;
-    /* tekitou */
+    background: #fff;
   }
 }
 
